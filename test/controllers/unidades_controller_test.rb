@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UnidadesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @unidade = unidades(:one)
+    @unidade = create(:unidade)
   end
 
   test "should get index" do
