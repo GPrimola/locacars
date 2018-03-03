@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Unidade</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patios.each do |patio| %>
+      <tr>
+        <td><%= patio.unidade %></td>
+        <td><%= patio.nome %></td>
+        <td><%= link_to 'Show', [@unidade, patio] %></td>
+        <td><%= link_to 'Edit', edit_unidade_patio_path(@unidade, patio) %></td>
+        <td><%= link_to 'Destroy', [@unidade, patio], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patio', new_unidade_patio_path(@unidade) %>

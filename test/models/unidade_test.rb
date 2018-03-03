@@ -11,4 +11,14 @@ class UnidadeTest < ActiveSupport::TestCase
     assert unidade.valid?
     assert unidade.save
   end
+
+  test 'unidade should have many patios' do
+    unidade = create(:unidade)
+    assert unidade.respond_to? :patios
+    assert unidade.patios.empty?
+
+    create_list(:patio, 5, unidade: unidade)
+    assert unidade.patios.any?
+    assert unidade.patios.count == 5
+  end
 end
