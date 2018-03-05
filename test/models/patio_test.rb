@@ -16,4 +16,12 @@ class PatioTest < ActiveSupport::TestCase
     refute patio.valid?
     assert patio.invalid?
   end
+
+  test "patio has many carros" do
+    patio = create(:patio)
+    create_list(:carro, 10, patio: patio)
+
+    assert patio.carros.any?
+    assert patio.carros.count == 10
+  end
 end

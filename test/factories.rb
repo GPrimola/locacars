@@ -1,9 +1,18 @@
 FactoryBot.define do
+  factory :carro do
+    patio
+    sequence :fabricante { |n| "Fabricante #{n}" }
+    sequence :nome { |n| "Carro #{n}" }
+    sequence :modelo { |n| "Modelo #{n}" }
+    sequence :ano
+    sequence :anoModelo
+  end
+
   factory :patio do
     unidade
     sequence :nome { |n| "Patio #{n}" }
   end
-  
+
   factory :unidade do
     sequence :nome { |n| "Unidade #{n}" }
     lat -23.641706
