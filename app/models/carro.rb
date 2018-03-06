@@ -3,13 +3,12 @@ class Carro < ApplicationRecord
 
   validates :patio,
             :fabricante,
-            :nome,
             :ano,
             :modelo,
             :ano,
             :anoModelo, presence: true
 
   def to_s
-    "#{self.fabricante} #{self.nome} #{self.modelo} (#{self.ano}/#{self.anoModelo})"
+    "#{self.fabricante} #{self.modelo} (#{self.ano}/#{self.anoModelo})"
   end
 end
