@@ -5,7 +5,7 @@ class PatiosController < ApplicationController
   # GET /patios
   # GET /patios.json
   def index
-    @patios = Patio.all
+    @patios = @unidade.patios.all
   end
 
   # GET /patios/1
