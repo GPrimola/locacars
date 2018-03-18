@@ -3,11 +3,12 @@ Types::QueryType = GraphQL::ObjectType.define do
   # Add root-level fields here.
   # They will be entry points for queries on your schema.
 
-  # TODO: remove me
-  field :testField, types.String do
-    description "An example field added by the generator"
-    resolve ->(obj, args, ctx) {
-      "Hello World!"
-    }
+  field :unidades, types[Types::Unidade] do
+    resolve Resolvers::UnidadeResolver.all
+  end
+
+  field :unidade, Types::Unidade do
+    argument :id, !types.ID
+    resolve Resolvers::UnidadeResolver.find
   end
 end
