@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :manutencao do
+    carro
+    data Date.today
+    sequence :mecanico { |n| "Mecânico #{n}" }
+  end
+  
   factory :carro do
     patio
     sequence :fabricante { |n| "Fabricante #{n}" }

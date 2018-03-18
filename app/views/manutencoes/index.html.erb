@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manutenções</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carro</th>
+      <th>Data</th>
+      <th>Mecanico</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manutencoes.each do |manutencao| %>
+      <tr>
+        <td><%= manutencao.carro %></td>
+        <td><%= manutencao.data %></td>
+        <td><%= manutencao.mecanico %></td>
+        <td><%= link_to 'Show', [@unidade, @patio, @carro, manutencao] %></td>
+        <td><%= link_to 'Edit', edit_unidade_patio_carro_manutencao_path(@unidade, @patio, @carro, manutencao) %></td>
+        <td><%= link_to 'Destroy', [@unidade, @patio, @carro, manutencao], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manutencao', new_unidade_patio_carro_manutencao_path(@unidade, @patio, @carro) %>

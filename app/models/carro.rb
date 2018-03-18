@@ -1,5 +1,6 @@
 class Carro < ApplicationRecord
   belongs_to :patio
+  has_many :manutencoes, class_name: 'Manutencao'
 
   validates :patio,
             :fabricante,

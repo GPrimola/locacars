@@ -24,4 +24,9 @@ class PatioTest < ActiveSupport::TestCase
     assert patio.carros.any?
     assert patio.carros.count == 10
   end
+
+  test '#to_s' do
+    patio = create(:patio)
+    assert patio.to_s == "#{patio.unidade.nome} #{patio.nome}"
+  end
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carro:</strong>
+  <%= @manutencao.carro %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @manutencao.data %>
+</p>
+
+<p>
+  <strong>Mecanico:</strong>
+  <%= @manutencao.mecanico %>
+</p>
+
+<%= link_to 'Edit', edit_unidade_patio_carro_manutencao_path(@unidade, @patio, @carro, @manutencao) %> |
+<%= link_to 'Back', :back %>
