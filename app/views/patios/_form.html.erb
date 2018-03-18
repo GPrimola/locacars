@@ -1,0 +1,27 @@
+<%= form_with(model: [@unidade, patio], local: true) do |form| %>
+  <% if patio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patio.errors.count, "error") %> prohibited this patio from being saved:</h2>
+
+      <ul>
+      <% patio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :unidade %>
+    <%= form.label :unidade, patio.unidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :patio_nome %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

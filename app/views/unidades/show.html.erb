@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @unidade.nome %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @unidade.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @unidade.long %>
+</p>
+
+<p>
+  <strong>Totalcarros:</strong>
+  <%= @unidade.totalCarros %>
+</p>
+
+<%= link_to 'Edit', edit_unidade_path(@unidade) %> |
+<%= link_to 'Back', unidades_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: [@unidade, @patio, @carro, manutencao], local: true) do |form| %>
+  <% if manutencao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manutencao.errors.count, "error") %> prohibited this manutencao from being saved:</h2>
+
+      <ul>
+      <% manutencao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data, id: :manutencao_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mecanico %>
+    <%= form.text_field :mecanico, id: :manutencao_mecanico %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
