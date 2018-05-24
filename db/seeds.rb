@@ -9,9 +9,10 @@ def mecanicos
 end
 
 if Patio.any?
-  puts 'Limpando a tabela de carros...'
+  puts 'Vendendo carros usados...'
   Carro.delete_all
-  puts 'Colocando os carros nos pátios...'
+  puts 'Comprando novos carros...'
+  puts 'Colocando novos carros nos pátios...'
   Patio.all.each do |patio|
     50.times do
       carro = patio.carros.create(carros.sample)
